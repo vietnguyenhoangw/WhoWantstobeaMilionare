@@ -26,7 +26,7 @@ public class Question {
     private String id;
     @SerializedName("level")
     @Expose
-    private String level;
+    private int level;
 
     public String getA1() {
         return a1;
@@ -76,11 +76,11 @@ public class Question {
         this.id = id;
     }
 
-    public String getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(String level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 
