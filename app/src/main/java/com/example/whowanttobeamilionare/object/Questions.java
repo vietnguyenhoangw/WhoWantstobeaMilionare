@@ -1,5 +1,5 @@
 
-package com.example.whowanttobeamilionare;
+package com.example.whowanttobeamilionare.object;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

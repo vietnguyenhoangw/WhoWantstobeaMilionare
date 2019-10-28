@@ -1,5 +1,5 @@
 
-package com.example.whowanttobeamilionare;
+package com.example.whowanttobeamilionare.object;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -27,6 +27,7 @@ public class Question {
     @SerializedName("level")
     @Expose
     private int level;
+
 
     public String getA1() {
         return a1;
