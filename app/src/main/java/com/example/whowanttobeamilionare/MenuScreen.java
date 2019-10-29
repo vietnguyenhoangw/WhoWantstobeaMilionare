@@ -53,8 +53,6 @@ public class MenuScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MenuScreen.this, MainActivity.class);
                 startActivity(intent);
-
-                finish();
             }
         });
     }

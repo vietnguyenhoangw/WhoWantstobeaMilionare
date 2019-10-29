@@ -105,6 +105,34 @@ public class DBHelper {
         return arrayList;
     }
 
+    public Question getQuestionByID(String id) {
+        db = context.openOrCreateDatabase(DATABASE_NAME,context.MODE_PRIVATE,null);
+
+        Cursor cursor = db.rawQuery("Select * From question Where id = '" + id + "'",null);
+
+        Question question = new Question();
+
+        while (cursor.moveToNext()){
+            String id1 = cursor.getString(0);
+            int level = cursor.getInt(1);
+            String content = cursor.getString(2);
+            String a1 = cursor.getString(3);
+            String a2 = cursor.getString(4);
+            String a3 = cursor.getString(5);
+            String ca = cursor.getString(6);
+
+            question.setId(id1);
+            question.setContent(content);
+            question.setLevel(level);
+            question.setA1(a1);
+            question.setA2(a2);
+            question.setA3(a3);
+            question.setCa(ca);
+        }
+
+        return question;
+    }
+
     public long insertQuestion(Question question){
         db = context.openOrCreateDatabase(DATABASE_NAME,
                 context.MODE_PRIVATE,
