@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -38,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Question> questionsByLevel;
     ArrayList<Question> allQuestions;
 
-    int level = 1;
     String questionID = "";
     String playerAnswer = "";
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         allQuestions = dbHelper.getQuestion();
         questionsByLevel = new ArrayList<>();
 
-        addQuestion();
+        addQuestion(MenuScreen.level);
         pickQuestion();
 
         btnConfirmAnswer = findViewById(R.id.btnCfAnswer);
@@ -89,10 +90,19 @@ public class MainActivity extends AppCompatActivity {
                 Question question = dbHelper.getQuestionByID(questionID);
 
                 if (question.getCa().equals(playerAnswer)) {
-                    Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
+                    MenuScreen.level ++;
+
+                    Intent intent = new Intent(MainActivity.this, NextLevelScreen.class);
+                    intent.putExtra("level", MenuScreen.level);
+                    startActivity(intent);
+
+                    finish();
                 }
                 else {
-                    Toast.makeText(MainActivity.this, "NOK", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, DoneGameScreen.class);
+                    startActivity(intent);
+
+                    finish();
                 }
             }
         });
@@ -105,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 1
-    private void addQuestion() {
+    private void addQuestion(int level) {
         questionsByLevel.clear();
         for (Question item : allQuestions) {
             if (item.getLevel() == level) {
@@ -140,19 +150,24 @@ public class MainActivity extends AppCompatActivity {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rdtA1:
                 playerAnswer = a1.getText().toString();
+                craeteDialog();
                 break;
             case R.id.rdtA2:
                 playerAnswer = a2.getText().toString();
+                craeteDialog();
                 break;
             case R.id.rdtA3:
                 playerAnswer = a3.getText().toString();
+                craeteDialog();
                 break;
             case R.id.rdtA4:
                 playerAnswer = a4.getText().toString();
+                craeteDialog();
                 break;
+                default:
+                    Toast.makeText(this, "Pickup your answer.", Toast.LENGTH_SHORT).show();
+                    break;
         }
-
-        craeteDialog();
     }
 
 }

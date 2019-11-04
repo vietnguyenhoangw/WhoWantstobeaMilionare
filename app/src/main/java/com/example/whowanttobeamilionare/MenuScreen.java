@@ -30,12 +30,14 @@ public class MenuScreen extends AppCompatActivity {
 
     /* Dialog */
     EditText edtUserNameInput;
-    static String UserName;
+    static String UserName = "";
 
     ArrayList<Question> allQuestion;
 
     FirebaseDatabase database;
     DatabaseReference myRef;
+
+    public static int level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +47,17 @@ public class MenuScreen extends AppCompatActivity {
 
         allQuestion = new ArrayList<>();
 
-        craeteDialog();
+        if (UserName == "") {
+            craeteDialog();
+            level = 1;
+        }
 
         btnPlaynewgame = findViewById(R.id.btnPlaynewgame);
         btnPlaynewgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MenuScreen.this, MainActivity.class);
+                level = 1;
                 startActivity(intent);
             }
         });
