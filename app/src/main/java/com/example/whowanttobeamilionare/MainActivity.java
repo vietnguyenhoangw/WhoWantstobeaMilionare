@@ -92,11 +92,20 @@ public class MainActivity extends AppCompatActivity {
                 if (question.getCa().equals(playerAnswer)) {
                     MenuScreen.level ++;
 
-                    Intent intent = new Intent(MainActivity.this, NextLevelScreen.class);
-                    intent.putExtra("level", MenuScreen.level);
-                    startActivity(intent);
+                    if (MenuScreen.level == 16) {
+                        Intent intent = new Intent(MainActivity.this, FinishGameScreen.class);
+                        startActivity(intent);
 
-                    finish();
+                        finish();
+                    }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, NextLevelScreen.class);
+                        intent.putExtra("level", MenuScreen.level);
+                        startActivity(intent);
+
+                        finish();
+                    }
+
                 }
                 else {
                     Intent intent = new Intent(MainActivity.this, DoneGameScreen.class);

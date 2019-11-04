@@ -10,6 +10,8 @@
     tools:context=".MenuScreen">
 
     <Button
+        android:textColor="@android:color/white"
+        android:background="@drawable/background_button"
         android:id="@+id/btnPlaynewgame"
         android:layout_margin="10dp"
         android:text="Play new game"
