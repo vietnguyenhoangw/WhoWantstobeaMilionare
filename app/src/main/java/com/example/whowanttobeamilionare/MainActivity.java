@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         Intent intent = new Intent(MainActivity.this, NextLevelScreen.class);
-                        intent.putExtra("level", MenuScreen.level);
                         startActivity(intent);
 
                         finish();

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.whowanttobeamilionare.DBhelper.DBHelper;
@@ -27,6 +28,7 @@ public class MenuScreen extends AppCompatActivity {
 
     DBHelper dbHelper;
     Button btnPlaynewgame;
+    TextView tvUsername;
 
     /* Dialog */
     EditText edtUserNameInput;
@@ -37,7 +39,7 @@ public class MenuScreen extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference myRef;
 
-    public static int level;
+    static int level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +47,12 @@ public class MenuScreen extends AppCompatActivity {
         setContentView(R.layout.activity_menu_screen);
         dbHelper= new DBHelper(MenuScreen.this);
 
+        tvUsername = findViewById(R.id.tv_username);
+        tvUsername.setText("Hello " + UserName);
+
         allQuestion = new ArrayList<>();
 
-        if (UserName == "") {
+        if (UserName.equals("")) {
             craeteDialog();
             level = 1;
         }
@@ -112,6 +117,7 @@ public class MenuScreen extends AppCompatActivity {
                         }
                         else {
                             UserName = edtUserNameInput.getText().toString();
+                            tvUsername.setText("Hello " + UserName);
 
                             addDatatoOfflineDB();
                             // when everything is ok, using dismiss.

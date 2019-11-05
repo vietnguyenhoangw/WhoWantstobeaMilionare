@@ -9,13 +9,34 @@
     android:gravity="center"
     tools:context=".MenuScreen">
 
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <Button
         android:textColor="@android:color/white"
         android:background="@drawable/background_button"
         android:id="@+id/btnPlaynewgame"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="Play new game"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+<!--    <Button-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:background="@drawable/background_button"-->
+<!--        android:id="@+id/btnScope"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:text="Top Player"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
 
 </LinearLayout>
