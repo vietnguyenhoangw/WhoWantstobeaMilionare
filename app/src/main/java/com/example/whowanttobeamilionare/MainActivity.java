@@ -32,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     DBHelper dbHelper;
 
-    Button btnConfirmAnswer, btn5050, btnAudience, btnChange;
+    Button btnConfirmAnswer, btn5050, btnAudience, btnChange, btnCall;
     TextView tvQuestionNums, tvContent;
     RadioGroup radioGroup;
     RadioButton a1, a2, a3, a4;
 
     ArrayList<Question> questionsByLevel;
     ArrayList<Question> allQuestions;
+    ArrayList<String> addAnswers = new ArrayList<>();
 
     String questionID = "";
     String playerAnswer = "";
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         allQuestions = dbHelper.getQuestion();
         questionsByLevel = new ArrayList<>();
 
+        helpBtnStatus();
         addQuestion(MenuScreen.level);
         pickQuestion();
 
@@ -65,12 +67,42 @@ public class MainActivity extends AppCompatActivity {
                 confirmClick();
             }
         });
+
+        btn5050.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                craeteConfirmHelpDialog(view);
+            }
+        });
+
+        btnAudience.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                craeteConfirmHelpDialog(view);
+            }
+        });
+
+        btnChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                craeteConfirmHelpDialog(view);
+            }
+        });
+
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                craeteConfirmHelpDialog(view);
+            }
+        });
+
     }
 
     private void createWidget() {
         btn5050 = findViewById(R.id.btn5050);
         btnAudience = findViewById(R.id.btnAudience);
         btnChange = findViewById(R.id.btnChange);
+        btnCall = findViewById(R.id.btnCall);
         tvQuestionNums = findViewById(R.id.tvQuestionNumbs);
         tvContent = findViewById(R.id.tvContent);
         radioGroup = findViewById(R.id.gr);
@@ -122,7 +154,23 @@ public class MainActivity extends AppCompatActivity {
         adb.show();
     }
 
-    // 1
+    private void craeteConfirmHelpDialog(final View v) {
+        final AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        adb.setCancelable(false);
+        adb.setTitle("Do you want to use this help?");
+        adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                clickConfirm(v);
+            }
+        });
+        adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                onResume();
+            }
+        });
+        adb.show();
+    }
+
     private void addQuestion(int level) {
         questionsByLevel.clear();
         for (Question item : allQuestions) {
@@ -132,11 +180,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // 2
     private void pickQuestion() {
         Question question = questionsByLevel.get(new Random().nextInt(questionsByLevel.size()));
 
-        ArrayList<String> addAnswers = new ArrayList<>();
         addAnswers.clear();
         addAnswers.add(question.getA1());
         addAnswers.add(question.getA2());
@@ -178,4 +224,54 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void clickConfirm(View v) {
+        switch (v.getId()) {
+            case R.id.btn5050:
+                Question question = dbHelper.getQuestionByID(questionID);
+
+                MenuScreen.btn5050 = false;
+
+                if (a1.getText().equals(question.getCa())) {
+                    a3.setText("");
+                    a2.setText("");
+                }
+
+                if (a2.getText().equals(question.getCa())) {
+                    a1.setText("");
+                    a3.setText("");
+                }
+
+                if (a3.getText().equals(question.getCa())) {
+                    a1.setText("");
+                    a2.setText("");
+                }
+
+                if (a4.getText().equals(question.getCa())) {
+                    a1.setText("");
+                    a2.setText("");
+                }
+
+                helpBtnStatus();
+                break;
+            case R.id.btnCall:
+                btnCall.setEnabled(false);
+                btnCall.setAlpha((float) 0.2);
+                break;
+            case R.id.btnAudience:
+                btnAudience.setEnabled(false);
+                btnAudience.setAlpha((float) 0.2);
+                break;
+            case R.id.btnChange:
+                btnChange.setEnabled(false);
+                btnChange.setAlpha((float) 0.2);
+                break;
+        }
+    }
+
+    public void helpBtnStatus() {
+        if (MenuScreen.btn5050 == false) {
+            btn5050.setEnabled(false);
+            btn5050.setAlpha((float) 0.2);
+        }
+    }
 }

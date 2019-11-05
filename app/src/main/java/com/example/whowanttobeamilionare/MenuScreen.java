@@ -33,6 +33,10 @@ public class MenuScreen extends AppCompatActivity {
     /* Dialog */
     EditText edtUserNameInput;
     static String UserName = "";
+    static Boolean btn5050 = true;
+    static Boolean btnCall = true;
+    static Boolean btnAudience = true;
+    static Boolean btnChange = true;
 
     ArrayList<Question> allQuestion;
 
@@ -63,6 +67,10 @@ public class MenuScreen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MenuScreen.this, MainActivity.class);
                 level = 1;
+                btn5050 = true;
+                btnCall = true;
+                btnAudience = true;
+                btnChange = true;
                 startActivity(intent);
             }
         });
