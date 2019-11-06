@@ -254,16 +254,25 @@ public class MainActivity extends AppCompatActivity {
                 helpBtnStatus();
                 break;
             case R.id.btnCall:
-                btnCall.setEnabled(false);
-                btnCall.setAlpha((float) 0.2);
+
+                MenuScreen.btnCall = false;
+
+                helpBtnStatus();
                 break;
             case R.id.btnAudience:
-                btnAudience.setEnabled(false);
-                btnAudience.setAlpha((float) 0.2);
+
+                MenuScreen.btnAudience = false;
+
+                Intent intent = new Intent(MainActivity.this, AudienceHelpActivity.class);
+                startActivity(intent);
+
+                helpBtnStatus();
                 break;
             case R.id.btnChange:
-                btnChange.setEnabled(false);
-                btnChange.setAlpha((float) 0.2);
+
+                MenuScreen.btnChange = false;
+
+                helpBtnStatus();
                 break;
         }
     }
@@ -272,6 +281,18 @@ public class MainActivity extends AppCompatActivity {
         if (MenuScreen.btn5050 == false) {
             btn5050.setEnabled(false);
             btn5050.setAlpha((float) 0.2);
+        }
+        if (MenuScreen.btnAudience == false) {
+            btnAudience.setEnabled(false);
+            btnAudience.setAlpha((float) 0.2);
+        }
+        if (MenuScreen.btnCall == false) {
+            btnCall.setEnabled(false);
+            btnCall.setAlpha((float) 0.2);
+        }
+        if (MenuScreen.btnChange == false) {
+            btnChange.setEnabled(false);
+            btnChange.setAlpha((float) 0.2);
         }
     }
 }
