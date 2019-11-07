@@ -254,17 +254,25 @@ public class MainActivity extends AppCompatActivity {
                 helpBtnStatus();
                 break;
             case R.id.btnCall:
+                Question question2 = dbHelper.getQuestionByID(questionID);
 
                 MenuScreen.btnCall = false;
+
+                Intent intent = new Intent(MainActivity.this, CallActivity.class);
+                intent.putExtra("questioncontent", question2.getContent());
+                intent.putExtra("a1", question2.getA1());
+                intent.putExtra("a2", question2.getA2());
+                intent.putExtra("a3", question2.getA3());
+                intent.putExtra("ca", question2.getCa());
+                startActivity(intent);
 
                 helpBtnStatus();
                 break;
             case R.id.btnAudience:
-
                 MenuScreen.btnAudience = false;
 
-                Intent intent = new Intent(MainActivity.this, AudienceHelpActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, AudienceHelpActivity.class);
+                startActivity(intent2);
 
                 helpBtnStatus();
                 break;

@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -137,6 +138,11 @@ public class MenuScreen extends AppCompatActivity {
         });
 
         alertDialogBuilder.show();
+
+        WindowManager.LayoutParams lp = alertDialogBuilder.getWindow().getAttributes();
+        lp.dimAmount=1f;
+        alertDialogBuilder.getWindow().setAttributes(lp);
+        alertDialogBuilder.getWindow().addFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
     }
 
     /* add all data from string(Firebase) to offline database */
