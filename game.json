@@ -1,0 +1,168 @@
+{
+"questions": [
+		{
+		"id": "001",
+		"level": 1,
+		"content": "2 x 3 = ?",
+		"a1" : "9",
+		"a2" : "8",
+		"a3" : "7",
+		"ca" : "6"
+		},
+		{
+		"id": "002",
+		"level": 1,
+		"content": "What the dog say?",
+		"a1" : "hihi",
+		"a2" : "haha",
+		"a3" : "moew moew",
+		"ca" : "Grau Gauw"
+		},
+		{
+		"id": "003",
+		"level": 1,
+		"content": "Which is a Asean's country ",
+		"a1" : "Africa",
+		"a2" : "Japan",
+		"a3" : "America",
+		"ca" : "Viet Nam"
+		},
+		{
+		"id": "004",
+		"level": 2,
+		"content": "Who is the main character of Tom and Jerry Movie?",
+		"a1" : "Luffy",
+		"a2" : "Innujaxa",
+		"a3" : "Mesha",
+		"ca" : "Tom"
+		},
+		{
+		"id": "005",
+		"level": 2,
+		"content": "Which is the name of the Nguyen Nhat Anh's book?",
+		"a1" : "Nha gia kim",
+		"a2" : "Doi ve co ban la buon",
+		"a3" : "p/s I love You",
+		"ca" : "Co gai den tu hom qua"
+		},
+		{
+		"id": "006",
+		"level": 3,
+		"content": "Which is the best song of new year ever?",
+		"a1" : "waka waka",
+		"a2" : "Despasito",
+		"a3" : "Love the way you lie",
+		"ca" : "Happy new year"
+		},
+		{
+		"id": "007",
+		"level": 4,
+		"content": "Who is the legend designer of the Apple's products?",
+		"a1" : "Steve Job",
+		"a2" : "Tim Cook",
+		"a3" : "Bill Gate",
+		"ca" : "Jony Ive"
+		},
+		{
+		"id": "008",
+		"level": 5,
+		"content": "Finger daddy, finger daddy ...?",
+		"a1" : "I am here",
+		"a2" : "How do you do",
+		"a3" : "Here i am",
+		"ca" : "Where are you"
+		},
+		{
+		"id": "009",
+		"level": 6,
+		"content": "Which is a phone brand?",
+		"a1" : "Nike",
+		"a2" : "Adidas",
+		"a3" : "Toyota",
+		"ca" : "Sony"
+		},
+		{
+		"id": "010",
+		"level": 7,
+		"content": "Who is the 2018 president of America?",
+		"a1" : "Obama",
+		"a2" : "Bush",
+		"a3" : "Binladen",
+		"ca" : "Donal Trump"
+		},
+		{
+		"id": "011",
+		"level": 8,
+		"content": "I am iron man is the qotes of?",
+		"a1" : "Natasha",
+		"a2" : "Steve Roger",
+		"a3" : "T'Challa",
+		"ca" : "Tony Stack"
+		},
+		{
+		"id": "012",
+		"level": 9,
+		"content": "Who is the man get a lot of achievements in Golf in history?",
+		"a1" : "Johny Hank",
+		"a2" : "Paul Pogba",
+		"a3" : "Tom Holland",
+		"ca" : "Tiger Wood"
+		},
+		{
+		"id": "013",
+		"level": 10,
+		"content": "The main man character of the Titanic movie is?",
+		"a1" : "Johny Tri Nguyen",
+		"a2" : "Daniel Craig",
+		"a3" : "Tom Cruise",
+		"ca" : "Leonardo Dicaprio"
+		},
+		{
+		"id": "014",
+		"level": 11,
+		"content": "Esskeitttt is the famous quotes of singer ...?",
+		"a1" : "Binh Gold",
+		"a2" : "Eminem",
+		"a3" : "Machinegun Kelly",
+		"ca" : "Lil Pump"
+		},
+		{
+		"id": "015",
+		"level": 12,
+		"content": "The highest iOS version Apple support for Iphone 5 is?",
+		"a1" : "11",
+		"a2" : "13",
+		"a3" : "12",
+		"ca" : "10"
+		},
+		{
+		"id": "016",
+		"level": 13,
+		"content": "How many camera on Iphone 11 pro max?",
+		"a1" : "1",
+		"a2" : "2",
+		"a3" : "4",
+		"ca" : "3"
+		},
+		{
+		"id": "017",
+		"level": 14,
+		"content": "Which is contry of the Ausus brand company?",
+		"a1" : "Japan",
+		"a2" : "VietNam",
+		"a3" : "Thailand",
+		"ca" : "China"
+		},
+		{
+		"id": "018",
+		"level": 15,
+		"content": "Who is the man create that game you are playing?",
+		"a1" : "Gaben",
+		"a2" : "HoangVuLong",
+		"a3" : "Mark Zukerbuck",
+		"ca" : "Vietnguyenhoangw"
+		}
+	]
+}
+
+

@@ -82,13 +82,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                craeteConfirmHelpDialog(view);
-            }
-        });
-
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
     private void createWidget() {
         btn5050 = findViewById(R.id.btn5050);
         btnAudience = findViewById(R.id.btnAudience);
-        btnChange = findViewById(R.id.btnChange);
         btnCall = findViewById(R.id.btnCall);
         tvQuestionNums = findViewById(R.id.tvQuestionNumbs);
         tvContent = findViewById(R.id.tvContent);
@@ -273,12 +265,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent2 = new Intent(MainActivity.this, AudienceHelpActivity.class);
                 startActivity(intent2);
-
-                helpBtnStatus();
-                break;
-            case R.id.btnChange:
-
-                MenuScreen.btnChange = false;
 
                 helpBtnStatus();
                 break;
